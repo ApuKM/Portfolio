@@ -1,5 +1,7 @@
+import { ObjectId } from "mongodb";
+
 export interface Project {
-  _id: string;
+  _id: ObjectId | string;
   title: string;
   image: string;
   shortDescription: string;

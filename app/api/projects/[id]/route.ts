@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import clientPromise, { DB_NAME, PROJECTS_COLLECTION } from "@/lib/mongodb";
 import { demoProjects } from "@/lib/demo-projects";
 import { Project } from "@/lib/types/project";
+import { ObjectId } from "mongodb";
 
 
 interface RouteParams {
@@ -13,15 +14,15 @@ interface RouteParams {
 // MongoDB-generated `_id` ObjectId, so no ObjectId casting is needed.
 export async function GET(_req: NextRequest, { params }: RouteParams) {
   const { id } = await params;
-
+ console.log("id from detailspage", id)
   try {
     const client = await clientPromise;
     const db = client.db(DB_NAME);
 
     const project = await db
       .collection<Project>(PROJECTS_COLLECTION)
-      .findOne({ _id: id });
-
+      .findOne({ _id: new ObjectId(id) });
+     console.log(project)
     if (project) {
       return NextResponse.json(
         { source: "database", project },
