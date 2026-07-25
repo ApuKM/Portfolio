@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Contact from "@/components/Contacts";
 import Education from "@/components/Education";
 import FeaturedProjectsContainer from "@/components/FeaturedContainer";
 import Hero from "@/components/Hero";
@@ -19,12 +20,12 @@ const Home = async () => {
   const featuredProjects = await getFeaturedProjects();
   return (
     <div>
-      <Navbar />
       <Hero />
       <About />
       <Skills />
       <Education />
       <FeaturedProjectsContainer projects={featuredProjects} />
+      <Contact />
     </div>
   );
 };
