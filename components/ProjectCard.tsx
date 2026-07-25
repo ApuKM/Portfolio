@@ -6,52 +6,61 @@ import { FaGithub } from "react-icons/fa";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
-      <div className="relative h-48 w-full overflow-hidden">
+    <div className="group flex flex-col h-full overflow-hidden rounded-2xl border border-border bg-surface shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/40">
+      
+      {/* Image Section - shrink-0 prevents it from resizing if content is long */}
+      <div className="relative h-52 w-full shrink-0 overflow-hidden bg-surface-secondary">
         <Image
           src={project.image}
           alt={project.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+      {/* Content Section - flex-1 allows it to grow and fill available grid height */}
+      <div className="flex flex-1 flex-col p-6">
+        
+        <h3 className="text-xl font-bold text-foreground mb-2 line-clamp-2">
           {project.title}
         </h3>
-        <p className="mt-2 flex-1 text-sm text-slate-600 dark:text-slate-400">
+        
+        <p className="text-sm text-foreground-muted mb-6 line-clamp-3">
           {project.shortDescription}
         </p>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        {/* Tech Stack - mt-auto pushes this block and the footer to the bottom */}
+        <div className="mt-auto flex flex-wrap gap-2 mb-6">
           {project.techStack.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300"
+              className="rounded-md bg-surface-secondary border border-border px-2.5 py-1 text-xs font-medium text-foreground-subtle"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="mt-5 flex items-center justify-between">
+        {/* Footer (Links) */}
+        <div className="flex items-center justify-between pt-4 border-t border-border/60">
           <Link
+            // Using a fallback to .id in case your API uses id instead of _id
             href={`/projects/${project._id}`}
-            className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover transition-colors"
           >
             Details
-            <ArrowRight className="h-4 w-4" />
+            {/* Added a subtle slide animation to the arrow on hover */}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} GitHub repository`}
-              className="text-slate-500 hover:text-slate-900 dark:hover:text-white"
+              className="text-foreground-subtle hover:text-primary transition-colors"
             >
               <FaGithub className="h-5 w-5" />
             </a>
@@ -60,12 +69,13 @@ export default function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} live site`}
-              className="text-slate-500 hover:text-slate-900 dark:hover:text-white"
+              className="text-foreground-subtle hover:text-accent transition-colors"
             >
               <ExternalLink className="h-5 w-5" />
             </a>
           </div>
         </div>
+
       </div>
     </div>
   );
