@@ -28,7 +28,7 @@ export default function Hero() {
 
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
             {/* View Resume Button */}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/files/resume.pdf" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary-hover text-primary-foreground font-bold shadow-lg shadow-primary/20"
@@ -39,7 +39,7 @@ export default function Hero() {
             </a>
 
             {/* Download Resume Button */}
-            <a href="/resume.pdf" download="Apu_Kumar_Resume.pdf">
+            <a href="/files/resume.pdf" download="Apu_Kumar_Resume.pdf">
               <Button
                 size="lg"
                 variant="outline"
