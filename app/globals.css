@@ -1,3 +1,33 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
 
+@theme {
+  /* Backgrounds */
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+
+  /* Text */
+  --color-foreground: #0f172a;
+  --color-foreground-muted: #475569;
+  --color-foreground-subtle: #64748b;
+
+  /* Primary (Deep Teal) */
+  --color-primary: #0f766e;
+  --color-primary-hover: #115e59;
+  --color-primary-foreground: #ffffff;
+
+  /* Accent */
+  --color-accent: #14b8a6;
+  --color-accent-hover: #0d9488;
+  --color-accent-foreground: #ffffff;
+
+  /* Borders */
+  --color-border: #e2e8f0;
+  --color-border-hover: #cbd5e1;
+
+  /* Cards */
+  --color-card: #ffffff;
+  --color-card-hover: #f8fafc;
+
+}
