@@ -39,7 +39,7 @@ export default function Hero() {
             </a>
 
             {/* Download Resume Button */}
-            <a href="/files/resume.pdf" download="Apu_Kumar_Resume.pdf">
+            <a href="/files/MOHAT KUMAR APU-Resume.pdf" download="Mohat_Kumar_Apu_Resume.pdf">
               <Button
                 size="lg"
                 variant="outline"
