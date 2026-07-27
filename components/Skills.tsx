@@ -26,6 +26,7 @@ export default function Skills() {
         { name: "MongoDB", level: 80 },
         { name: "Prisma ORM", level: 85 },
         { name: "Zod", level: 90 },
+        { name: "Better Auth", level: 90 },
       ],
     },
     {
