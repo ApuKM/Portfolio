@@ -10,6 +10,7 @@ import { Project } from "./types/project";
 export const demoProjects: Project[] = [
   {
     _id: "1",
+    order: "1",
     title: "TaskFlow — Team Task Manager",
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&q=80",
     shortDescription:
@@ -32,6 +33,7 @@ export const demoProjects: Project[] = [
   },
   {
     _id: "2",
+    order: "2",
     title: "MarketPulse — Stock Analytics Dashboard",
     image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&q=80",
     shortDescription:
@@ -54,6 +56,7 @@ export const demoProjects: Project[] = [
   },
   {
     _id: "3",
+    order: "3",
     title: "Trailhead — Hiking Route Explorer",
     image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80",
     shortDescription:

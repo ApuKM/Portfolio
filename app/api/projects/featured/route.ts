@@ -12,6 +12,7 @@ export async function GET() {
     const projects = await db
       .collection<Project>(PROJECTS_COLLECTION)
       .find({})
+      .sort({ order: 1 })
       .limit(3)
       .toArray();
 
@@ -20,7 +21,7 @@ export async function GET() {
     if (!projects || projects.length === 0) {
       return NextResponse.json(
         { source: "fallback", projects: demoProjects },
-        { status: 200 }
+        { status: 200 },
       );
     }
 
@@ -29,7 +30,7 @@ export async function GET() {
     console.error("[/api/projects] Falling back to demo data:", error);
     return NextResponse.json(
       { source: "fallback", projects: demoProjects },
-      { status: 200 }
+      { status: 200 },
     );
   }
 }

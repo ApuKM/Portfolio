@@ -35,8 +35,9 @@ export default function Skills() {
       skills: [
         { name: "Agentic AI", level: 95 },
         { name: "Vibe Coding", level: 90 },
-        { name: "Git & Version Control", level: 85 },
-        { name: "Postman API", level: 80 },
+        { name: "Git & Version Control", level: 95 },
+        { name: "Vercel & Render", level: 80 },
+        { name: "Leet Code", level: 20 },
       ],
     },
   ];

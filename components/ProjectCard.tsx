@@ -32,7 +32,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
         {/* Tech Stack - mt-auto pushes this block and the footer to the bottom */}
         <div className="mt-auto flex flex-wrap gap-2 mb-6">
-          {project.techStack.slice(0, 4).map((tech) => (
+          {project?.techStack?.slice(0, 4).map((tech) => (
             <span
               key={tech}
               className="rounded-md bg-surface-secondary border border-border px-2.5 py-1 text-xs font-medium text-foreground-subtle"

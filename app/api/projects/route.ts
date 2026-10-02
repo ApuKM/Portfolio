@@ -12,6 +12,7 @@ export async function GET() {
     const projects = await db
       .collection<Project>(PROJECTS_COLLECTION)
       .find({})
+      .sort({ order: 1})
       .toArray();
 
     // If the collection exists but is empty, still fall back to demo data

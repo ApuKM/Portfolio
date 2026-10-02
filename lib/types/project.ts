@@ -2,6 +2,7 @@ import { ObjectId } from "mongodb";
 
 export interface Project {
   _id: ObjectId | string;
+  order: string | number;
   title: string;
   image: string;
   shortDescription: string;

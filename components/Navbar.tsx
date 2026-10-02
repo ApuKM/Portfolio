@@ -32,7 +32,7 @@ export default function Navbar() {
             <AnchorLink 
               key={link.name} 
               href={link.href}
-              className="text-foreground-subtle hover:text-accent transition-colors duration-200"
+              className="text-surface-secondary hover:text-accent transition-colors duration-200"
             >
               {link.name}
             </AnchorLink>
